@@ -6,7 +6,7 @@ class OmiyageKobeTablesController extends AppController {
    
   //ほとんど使わない
   public function index(){
-	// $this -> autoRender = false;
+	 $this -> autoRender = false;
     // 以下がデータベース関係
 	if ($this->request->is('post')) {
 	      $data = $this->OmiyageKobeTable->findById(rand(1,10));
