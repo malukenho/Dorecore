@@ -91,6 +91,10 @@ p{
 	border-radius: 4px;
 
 }
+.img-responsive{
+	height:20vw;
+	width:20vw;
+}
 .titlebox{
 	background:rgba(255,255,255,0.7);    
 	border-radius: 4px;
@@ -150,7 +154,7 @@ p{
 			<div class="row">
 				<div class="col-xs-2"></div>
 				<div align="center" class="col-xs-7 titlebox">
-					<p>こちらはいかがでしょうか？</p>
+					<p><FONT size="7">こちらはいかが？</FONT></p>
 				</div>
 				<div class="col-xs-2"></div>
 			</div>
@@ -163,8 +167,8 @@ p{
 	            
 	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-4 box">
 	                    <img class="img-responsive hito" src=<?php echo $data1['OmiyageKobeTable']['url']; ?>>
-	                    名前:<?php echo $data1['OmiyageKobeTable']['name']; ?><br>
-	                    値段:594円<br>
+	                    <?php echo $data1['OmiyageKobeTable']['name']; ?><br>
+	                    <?php echo $data1['OmiyageKobeTable']['price']; ?>円<br>
 	            </div>
 	            
 	            <div class="col-xs-1">
@@ -172,8 +176,8 @@ p{
 	            
 	            <div  align="center" class="ui-draggable ui-draggable-handle col-xs-4 box">
 	                    <img class="img-responsive hito" src=<?php echo $data2['OmiyageKobeTable']['url']; ?>>
-	            		名前:<?php echo $data2['OmiyageKobeTable']['name']; ?><br>
-	                    値段:702円<br>
+	            		<?php echo $data2['OmiyageKobeTable']['name']; ?><br>
+	                    <?php echo $data2['OmiyageKobeTable']['price']; ?>円<br>
 	            </div>
 	            
 	            <div class="col-xs-1">
@@ -189,8 +193,8 @@ p{
 	            
 	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-4 box">
 	                    <img class="img-responsive hito" src=<?php echo $data3['OmiyageKobeTable']['url']; ?>>
-	                    名前:<?php echo $data3['OmiyageKobeTable']['name']; ?><br>
-	                    値段:1978円<br>
+	                    <?php echo $data3['OmiyageKobeTable']['name']; ?><br>
+	                    <?php echo $data3['OmiyageKobeTable']['price']; ?>円<br>
 	            </div>
 	            
 	            <div class="col-xs-1">
@@ -198,8 +202,8 @@ p{
 	            
 	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-4 box">
 	                    <img class="img-responsive hito" src=<?php echo $data4['OmiyageKobeTable']['url']; ?>>
-	                    名前:<?php echo $data4['OmiyageKobeTable']['name']; ?><br>
-	                    値段:1080円<br>
+	                    <?php echo $data4['OmiyageKobeTable']['name']; ?><br>
+	                    <?php echo $data4['OmiyageKobeTable']['price']; ?>円<br>
 	            </div>
 	            
 	            <div class="col-xs-1">
@@ -215,8 +219,8 @@ p{
 	            
 	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-4 box">
 	                    <img class="img-responsive hito" src=<?php echo $data5['OmiyageKobeTable']['url']; ?>>
-	                    名前:<?php echo $data5['OmiyageKobeTable']['name']; ?><br>
-	                    値段:880円<br>
+	                    <?php echo $data5['OmiyageKobeTable']['name']; ?><br>
+	                    <?php echo $data5['OmiyageKobeTable']['price']; ?>円<br>
 	            </div>
 	            
 	            <div class="col-xs-1">
@@ -224,8 +228,8 @@ p{
 	            
 	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-4 box">
 	                    <img class="img-responsive hito" src=<?php echo $data6['OmiyageKobeTable']['url']; ?>>
-	                    名前:<?php echo $data6['OmiyageKobeTable']['name']; ?><br>
-	                    値段:1080円<br>
+	                    <?php echo $data6['OmiyageKobeTable']['name']; ?><br>
+	                    <?php echo $data6['OmiyageKobeTable']['price']; ?>円<br>
 	            </div>
 	            
 	            <div class="col-xs-1">

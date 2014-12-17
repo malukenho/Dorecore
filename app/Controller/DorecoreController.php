@@ -49,7 +49,7 @@ class DorecoreController extends AppController {
 				$data= $this->OmiyageKobeTable->findById(rand(41,50));
 				$this->set('data5',$data);
 
-				$data= $this->OmiyageKobeTable->findById(rand(51,55));
+				$data= $this->OmiyageKobeTable->findById(rand(51,60));
 				$this->set('data6',$data);
     }
     
