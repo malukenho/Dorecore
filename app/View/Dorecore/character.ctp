@@ -9,27 +9,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="お土産推薦アプリ　NATAKA-TTT">
+    <meta name="author" content="NAKATA-TTT">
 
     <title>Dore Kore Kobe</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-    <script src="./jquery.ui.touch-punch.min.js"></script>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<script src="./js/bootstrap-select.js"></script>
 
     <!-- Custom CSS -->
     <link href="css/4-col-portfolio.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 <style>
 body{
 	background-color: #0080FF;
@@ -69,132 +59,52 @@ p{
   min-width: 52%;
   min-height: 50%;
 }
-
-
 </style>
-
-<script>
-$(function() {
-	$(".hito").draggable({
-	connectToSortable: ".hako1,.hako2",
-	revert: "invalid"
-	});
-
-	$(".hako1").sortable({
-	});
-
-	$(".hako2").sortable({
-	});
-});
+<script type="text/javascript">
+        $(window).on('load', function () {
+            $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });
+        });
 </script>
 </head>
 
 <body>
     <!-- Page Content -->
 	<div id="container">
-			<div class="row">
-				<div class="col-xs-2"></div>
-				<div align="center" class="col-xs-7 titlebox">
-					<p>あなたと渡す相手について教えてください</p>
-				</div>
-				<div class="col-xs-2"></div>
+		<div align="center" class="row">
+			<div class="col-lg-4 col-lg-offset-4 col-xs-8 col-xs-offset-2">
+				<h4>相手について教えてください!</h4>
 			</div>
-	 
-	        <!-- Projects Row -->
-	        <div class="row">
-	            <div class="col-xs-2">
-	            </div>
-	            
-	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-3 box">
-	                    <p>10代</p>
-	                    <img class="img-responsive hito" src="img/onna_1.png" width="100" alt="">
-	            </div>
-	            
-	            <div class="col-xs-1">
-	            </div>
-	            
-	            <div  align="center" class="ui-draggable ui-draggable-handle col-xs-3 box">
-	                    <p>20代</p>
-	                    <img class="img-responsive hito" src="img/onna_2.png" width="100" alt="">
-	            </div>
-	            
-	            <div class="col-xs-2">
-	            </div>
-	            
-	        </div>
-	        <!-- /.row -->
-
-	         <!-- Projects Row -->
-	        <div class="row">
-	            <div class="col-xs-2">
-	            </div>
-	            
-	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-3 box">
-	                    <p>30代</p>
-	                    <img class="img-responsive hito" src="img/onna_3.png" width="100" alt="">
-	            </div>
-	            
-	            <div class="col-xs-1">
-	            </div>
-	            
-	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-3 box">
-	                    <p>40代</p>
-	                    <img class="img-responsive hito" src="img/onna_4.png" width="100" alt="">
-	            </div>
-	            
-	            <div class="col-xs-2">
-	            </div>
-	            
-	        </div>
-	        <!-- /.row -->
-
-	        <!-- Projects Row -->
-	        <div class="row">
-	            <div class="col-xs-2">
-	            </div>
-	            
-	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-3 box">
-	                    <p>50代</p>
-	                    <img class="img-responsive hito" src="img/onna_5.png" width="100" alt="">
-	            </div>
-	            
-	            <div class="col-xs-1">
-	            </div>
-	            
-	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-3 box">
-	                    <p>60代</p>
-	                    <img class="img-responsive hito" src="img/onna_6.png" width="100" alt="">	            </div>
-	            
-	            <div class="col-xs-2">
-	            </div>
-	            
-	        </div>
-	        <!-- /.row -->
-
-	        <!-- Projects Row -->
-	        <div class="row">
-	            <div class="col-xs-2">
-	            </div>
-	            
-	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-3 hako1">
-	            	<p>あなた</p>
-	            </div>
-	            
-	            <div class="col-xs-1">
-	            	<center><a href="result" class="choice"><b>決定!</b></a></center>
-	            </div>
-	            
-	            <div align="center" class="ui-draggable ui-draggable-handle col-xs-3 hako2">
-	            	<p>あいて</p>
-	            </div>
-	            
-	            <div class="col-xs-2">
-	            </div>
-	            
-	        </div>
-	        <!-- /.row -->
+		</div>
 	</div>
-        <!-- Footer -->
+	<div class = "row">
+		<div align="center" class="col-lg-4 col-lg-offset-4 col-xs-8 col-xs-offset-2">
+			<select class ="form-control">
+				<option value="default">性別</option>
+				<option value="men">男性</option>
+				<option value="women">女性</option>
+			</select>
+			<br>
+			<select class ="form-control">
+				<option value="default">年代</option>
+				<option value="10">0~10才</option>
+				<option value="20">10~20才</option>
+				<option value="30">20~30才</option>
+				<option value="40">30~40才</option>
+				<option value="50">40~50才</option>
+				<option value="60">50才以上</option>
+			</select>			
+		</div>
+	</div>
+	<br>
+	<div class = "row">
+		<div align="center" class="col-lg-4 col-lg-offset-4 col-xs-6 col-xs-offset-3 titlebox">
+			<img src="./img/a1.png">
+		</div>
+	</div>
+
+	 
     <footer>
             <div class="row">
                 <div class="col-lg-12">
