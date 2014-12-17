@@ -103,8 +103,15 @@ p{
 			<img src="./img/a1.png">
 		</div>
 	</div>
+	<br>
+    <!-- Projects Row -->
+    <div class="row">
+      	<div align="center" class="col-xs-8 col-xs-offset-2">
+			<a href="card" class="btn btn-default btn-lg"><b>決定</b></a>
+		</div>
+    </div>
+    <!-- /.row -->
 
-	 
     <footer>
             <div class="row">
                 <div class="col-lg-12">

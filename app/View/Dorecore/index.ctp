@@ -104,6 +104,7 @@ p{
 	        </div>
 	        <!-- /.row -->
 
+
         <!-- Footer -->
     <footer>
             <div class="row">
