@@ -53,12 +53,12 @@ class DorecoreController extends AppController {
 				$this->set('data6',$data);
     }
     
-    public function sample(){
+    public function sample($hoge){
    		//OmiyageKobetable()のモデルを使う定義
 		$this->set_omiyage_kobe_tables();
-		//1~10の値をランダムで選択
-	    $data = $this->OmiyageKobeTable->findById(rand(1,10));
-		$this->set('data',$data);
+		
+		echo $hoge;
+
 		
     }
 
