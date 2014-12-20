@@ -34,6 +34,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	
 </head>
 <body>
 	<div id="container">
@@ -59,5 +61,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+	
+	<script>
+	$(function(){
+		setTimeout(function(){
+				$('#flashMessage').fadeOut("slow");
+		},800);
+	});
+	</script>
+	
 </body>
 </html>

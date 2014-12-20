@@ -1169,11 +1169,12 @@ var TOUCH_ACTION_PAN_Y = 'pan-y';
  * @param {String} value
  * @constructor
  */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function TouchAction(manager, value) {
     this.manager = manager;
     this.set(value);
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 TouchAction.prototype = {
     /**
      * set the touchAction value on the element or enable the polyfill
@@ -1675,6 +1676,8 @@ inherit(AttrRecognizer, Recognizer, {
  * @constructor
  * @extends AttrRecognizer
  */
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 function PanRecognizer() {
     AttrRecognizer.apply(this, arguments);
 
@@ -3390,9 +3393,13 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
   // [Rebound](http://facebook.github.io/rebound).
   // You mostly don't need to worry about this, just use
   // SpringConfig.fromOrigamiTensionAndFriction(v, v);
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
   var OrigamiValueConverter = rebound.OrigamiValueConverter = {
+
     tensionFromOrigamiValue: function(oValue) {
       return (oValue - 30.0) * 3.62 + 194.0;
+		
     },
 
     origamiValueFromTension: function(tension) {
@@ -3400,13 +3407,22 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
     },
 
     frictionFromOrigamiValue: function(oValue) {
+	  
       return (oValue - 8.0) * 3.0 + 25.0;
+	  
     },
 
     origamiFromFriction: function(friction) {
       return (friction - 25.0) / 3.0 + 8.0;
+	  
     }
+
+	/*document.getElementById("viewport4").style.visibility="hidden";*/
+
   };
+
+  //document.getElementById("viewport4").style.visibility="hidden";
+///////////////////////////////////////////////////////////////////////////////
 
   util.extend(SpringConfig, {
     // Convert an origami Spring tension and friction to Rebound spring
@@ -3417,12 +3433,14 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
       return new SpringConfig(
         OrigamiValueConverter.tensionFromOrigamiValue(tension),
         OrigamiValueConverter.frictionFromOrigamiValue(friction));
+		
     },
 
     // Create a SpringConfig with no tension or a coasting spring with some amount
     // of Friction so that it does not coast infininitely.
     coastingConfigWithOrigamiFriction: function(friction) {
       return new SpringConfig(0, OrigamiValueConverter.frictionFromOrigamiValue(friction));
+	
     }
   });
 
@@ -3713,8 +3731,8 @@ Card = function Card (stack, targetElement) {
     config = Card.config(stack.config());
     eventEmitter = Sister();
     springSystem = stack.springSystem();
-    springThrowIn = springSystem.createSpring(250, 10);
-    springThrowOut = springSystem.createSpring(500, 20);
+    springThrowIn = springSystem.createSpring(1, 20);//////スピード//
+    springThrowOut = springSystem.createSpring(1, 20);////////
     lastThrow = {};
     lastTranslate = {x: 0, y: 0};
 
@@ -3944,6 +3962,7 @@ Card = function Card (stack, targetElement) {
  * @param {Object} config
  * @return {Object}
  */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Card.config = function (config) {
     config = config || {};
 
@@ -3952,17 +3971,17 @@ Card.config = function (config) {
     config.throwOutConfidence = config.throwOutConfidence ? config.throwOutConfidence : Card.throwOutConfidence;
 
     config.throwOutDistance = config.throwOutDistance ? config.throwOutDistance : Card.throwOutDistance;
-    config.minThrowOutDistance = config.minThrowOutDistance ? config.minThrowOutDistance : 400;
-    config.maxThrowOutDistance = config.maxThrowOutDistance ? config.maxThrowOutDistance : 500;
+    config.minThrowOutDistance = config.minThrowOutDistance ? config.minThrowOutDistance : 300;
+    config.maxThrowOutDistance = config.maxThrowOutDistance ? config.maxThrowOutDistance : 300;
 
     config.rotation = config.rotation ? config.rotation : Card.rotation;
-    config.maxRotation = config.maxRotation ? config.maxRotation : 20;
+    config.maxRotation = config.maxRotation ? config.maxRotation : 0;
 
     config.transform = config.transform ? config.transform : Card.transform;
 
     return config;
 };
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Invoked in the event of `dragmove` and every time the physics solver is triggered.
  * Uses CSS transform to translate element position and rotation.
@@ -3971,9 +3990,14 @@ Card.config = function (config) {
  * @param {Number} y Vertical offset from the startDrag.
  * @return {null}
  */
+
+
 Card.transform = function (element, x, y, r) {
     element.style[vendorPrefix('transform')] = 'translate3d(0, 0, 0) translate(' + x + 'px, ' + y + 'px) rotate(' + r + 'deg)';
 };
+
+
+
 
 /**
  * If element is not the last among the siblings, append the
@@ -4019,10 +4043,12 @@ Card.throwOutConfidence = function (offset, element) {
  * @param {Number} throwOutConfidence config.throwOutConfidence
  * @return {Boolean}
  */
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Card.isThrowOut = function (offset, element, throwOutConfidence) {
     return throwOutConfidence == 1;
 };
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Invoked when card is added to the stack.
  * The card is thrown to this offset from the stack.
@@ -4044,6 +4070,8 @@ Card.throwOutDistance = function (minThrowOutDistance, maxThrowOutDistance) {
  * @param {Number} maxRotation
  * @return {Number} Rotation angle expressed in degrees.
  */
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Card.rotation = function (x, y, element, maxRotation) {
     var horizontalOffset = Math.min(Math.max(x/element.offsetWidth, -1), 1),
         verticalOffset = (y > 0 ? 1 : -1) * Math.min(Math.abs(y)/100, 1),
@@ -4051,7 +4079,7 @@ Card.rotation = function (x, y, element, maxRotation) {
 
     return rotation;
 };
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * @see http://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript/4819886#4819886
  */

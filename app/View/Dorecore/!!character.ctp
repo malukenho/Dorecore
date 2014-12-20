@@ -80,22 +80,14 @@ p{
 	</div>
 	<div class = "row">
 		<div align="center" class="col-lg-4 col-lg-offset-4 col-xs-8 col-xs-offset-2">
-			<select class ="form-control">
-				<option value="default">性別</option>
-				<option value="men">男性</option>
-				<option value="women">女性</option>
-			</select>
-			<br>
-			<select class ="form-control">
-				<option value="default">年代</option>
-				<option value="10">0~10才</option>
-				<option value="20">10~20才</option>
-				<option value="30">20~30才</option>
-				<option value="40">30~40才</option>
-				<option value="50">40~50才</option>
-				<option value="60">50才以上</option>
-			</select>			
-		</div>
+			<?php
+			echo $this->Html->link('男',array('action'=>'man')); 
+			?>
+			
+			<?php
+			echo $this->Html->link('女',array('action'=>'woman')); 
+			?>
+
 	</div>
 	<br>
 	<div class = "row">
